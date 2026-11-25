@@ -25,7 +25,7 @@ record_dir=recordings
 rig=true
 rig_baud=9600
 rig_data_bits=default
-rig_debug=true
+rig_debug=false
 rig_device=/dev/ttyUSB0
 rig_dtr=default
 rig_handshake=default
@@ -42,9 +42,5 @@ tci=false
 tci_host=0.0.0.0:50001
 
 [web]
-web-listen=0.0.0.0
-web-port=8041
-listen=0.0.0.0
-port=8041
 monitoring=false
 password="pbkdf2-sha256$100000$DwRSCzHSFpv/bN9VbXW3lg==$VlIvv31dL4Lb7y3VYASFViv984/bUiqWnYscEF7Gf0c="

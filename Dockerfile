@@ -2,8 +2,7 @@ FROM debian:trixie-slim
 
 #ADD https://github.com/arodland/Data2G.git#v0.5.3 /data2g
 ADD data2g-0.5.3-linux-aarch64.tar.gz .
-
-WORKDIR /data2g
+RUN rm -f bin/data2g-gui lib/share/libQt* ../data2g-0.5.3-linux-aarch64.tar.gz
 
 COPY dot.bashrc /root/.bashrc
 COPY  --chmod=0755 alsa_setup /root/bin/alsa_setup
@@ -14,6 +13,7 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install -y libgli
 
 RUN /root/bin/alsa_setup
 
+WORKDIR /data2g
 #COPY deps ./deps
 
 #ENTRYPOINT  [ "/bin/bash" ]

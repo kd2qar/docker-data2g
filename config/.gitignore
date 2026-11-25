@@ -1,1 +1,3 @@
-data2g.conf
+*
+!.gitignore
+!data2g.conf.SAMPLE
