@@ -26,23 +26,10 @@ services:
         permissions: rwm
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      #- type: bind
-        #source: ./config/data2g.conf
-        #target: /root/.config/Data2G/data2g.conf
-        #read_only: false
       - type: bind
         source: ./config
         target: /root/.config/Data2G
     ports:
-      #- host_ip: *hostip
-      #  protocol: tcp
-      #  target: 80
-      #  published: 8088
-      #- host_ip: *hostip
-      #  protocol: tcp
-      #  target: 443
-      #  published: 4444
-      # web interface port
       - host_ip: *hostip
         protocol: tcp
         target: 8041
@@ -65,4 +52,9 @@ services:
     group_add:
       - audio
 
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: 3
 
